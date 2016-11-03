@@ -10,18 +10,26 @@ import { Platform, ActionSheetController } from 'ionic-angular';
   }
 })
 export class HelloIonicPage {
-    
+
     slideOptions = {
-        pager: true
+        pager: true,
+        effect: 'coverflow',
+        coverflow: {
+          rotate: 10,
+          stretch: 0,
+          depth: 100,
+          modifier: 1,
+          slideShadows : false
+        }
     };
 
     constructor(
         public actionSheetCtrl: ActionSheetController,
         public platform: Platform
     ) {
-    
+
     }
-    
+
     openMenu() {
     let actionSheet = this.actionSheetCtrl.create({
       //title: 'Albums',
